@@ -13,6 +13,10 @@ describe('Caesar', function() {
     expect(caesar('ABC XYZ')).toEqual('BCD YZA');
   });
 
+  it('keeps the same case', () => {
+    expect(caesar('Microverse', 7)).toEqual('Tpjyvclyzl');
+  });
+
   it('does not alter punctuation', () => {
     expect(caesar('.,!?', 5)).toEqual('.,!?');
   });
