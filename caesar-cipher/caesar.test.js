@@ -1,6 +1,6 @@
-const caesar = require('./caesar');
+import caesar from './caesar';
 
-describe('Caesar', function() {
+describe('caesar', () => {
   it('is a function', () => {
     expect(typeof caesar).toEqual('function');
   });
@@ -19,5 +19,15 @@ describe('Caesar', function() {
 
   it('does not alter punctuation', () => {
     expect(caesar('.,!?', 5)).toEqual('.,!?');
+  });
+
+  it('does not alter numbers', () => {
+    expect(caesar('12345', 5)).toEqual('12345');
+  });
+
+  it('throws an error when the input is not valid', () => {
+    expect(() => caesar(123, 1)).toThrow(TypeError('Invalid input'));
+    expect(() => caesar('abc', true)).toThrow(TypeError('Invalid input'));
+    expect(() => caesar()).toThrow(TypeError('Invalid input'));
   });
 });

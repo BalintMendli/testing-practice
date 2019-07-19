@@ -1,6 +1,6 @@
-const reverse = require('./reverse');
+import reverse from './reverse';
 
-describe('Reverse', function() {
+describe('Reverse', () => {
   it('is a function', () => {
     expect(typeof reverse).toEqual('function');
   });
@@ -11,5 +11,10 @@ describe('Reverse', function() {
 
   it('returns the same string for palindromes', () => {
     expect(reverse('racecar')).toEqual('racecar');
+  });
+
+  it('throws an error when the input is not a string', () => {
+    expect(() => reverse(true)).toThrow(TypeError('Invalid input'));
+    expect(() => reverse()).toThrow(TypeError('Invalid input'));
   });
 });

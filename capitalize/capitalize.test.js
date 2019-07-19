@@ -1,6 +1,6 @@
-const capitalize = require('./capitalize');
+import capitalize from './capitalize';
 
-describe('Capitalize', function() {
+describe('capitalize', () => {
   it('is a function', () => {
     expect(typeof capitalize).toEqual('function');
   });
@@ -15,5 +15,9 @@ describe('Capitalize', function() {
 
   it('only capitalizes the first letter of the string', () => {
     expect(capitalize('word word word')).toEqual('Word word word');
+  });
+
+  it('throws an error when the input is not a string', () => {
+    expect(() => capitalize(123)).toThrow(TypeError('Invalid input'));
   });
 });

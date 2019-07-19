@@ -10,7 +10,17 @@
   "keywords": [],
   "author": "",
   "license": "ISC",
+  "babel": {
+    "env": {
+      "test": {
+        "plugins": [
+          "@babel/plugin-transform-modules-commonjs"
+        ]
+      }
+    }
+  },
   "devDependencies": {
+    "@babel/plugin-transform-modules-commonjs": "^7.6.0",
     "jest": "^24.8.0"
   }
 }
